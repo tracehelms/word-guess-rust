@@ -8,7 +8,9 @@ edition = "2018"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
+getrandom = { version = "0.2.2", features = ["js"] }
 log = "0.4"
+rand = "0.8.0"
 strum = "0.19"
 strum_macros = "0.19"
 serde = "1"

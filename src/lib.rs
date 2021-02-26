@@ -1,6 +1,8 @@
 #![recursion_limit = "512"]
 
 mod app;
+mod game;
+mod dictionary;
 
 use wasm_bindgen::prelude::*;
 
