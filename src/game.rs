@@ -71,11 +71,11 @@ impl Game {
             None => return (),
             Some(c) if self.guessed.contains(&c) => {
                 self.error_message = String::from("You can't guess the same letter twice.");
-            },
+            }
             Some(c) if self.word.contains(&c.to_string()) => self.guessed.push(c),
             Some(c) if !c.is_alphabetic() => {
                 self.error_message = String::from("Your guess has to be a letter.")
-            },
+            }
             Some(c) => {
                 self.guessed.push(c);
                 self.guesses_left = self.guesses_left - 1;
@@ -103,7 +103,11 @@ impl Game {
     }
 
     pub fn already_guessed(&self) -> String {
-        let mut already_guessed = self.guessed.iter().map(|x| x.to_string()).collect::<Vec<String>>();
+        let mut already_guessed = self
+            .guessed
+            .iter()
+            .map(|x| x.to_string())
+            .collect::<Vec<String>>();
         already_guessed.sort();
         already_guessed.join("")
     }
@@ -281,7 +285,10 @@ mod tests {
             game.guess();
         }
 
-        assert_eq!(game.game_over_message(), "You lost. The word was: xyz".to_string());
+        assert_eq!(
+            game.game_over_message(),
+            "You lost. The word was: xyz".to_string()
+        );
     }
 
     #[test]
