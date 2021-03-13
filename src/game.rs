@@ -26,7 +26,7 @@ impl Game {
             guess_value: None,
             guessed: vec![],
             guesses_left: NUM_GUESSES,
-            word: word,
+            word,
         }
     }
 
@@ -68,7 +68,7 @@ impl Game {
         self.error_message = String::from("");
 
         match self.guess_value {
-            None => return (),
+            None => return,
             Some(c) if self.guessed.contains(&c) => {
                 self.error_message = String::from("You can't guess the same letter twice.");
             }
@@ -78,7 +78,7 @@ impl Game {
             }
             Some(c) => {
                 self.guessed.push(c);
-                self.guesses_left = self.guesses_left - 1;
+                self.guesses_left -= 1;
             }
         };
 

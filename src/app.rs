@@ -43,7 +43,7 @@ impl Component for App {
         };
 
         let maybe_show_guessing_form = move || -> Html {
-            if let Some(_) = self.state.game_result {
+            if self.state.game_result.is_some() {
                 html! {}
             } else {
                 html! {
