@@ -1,10 +1,10 @@
 # Hangman with Rust and Yew
 
-TODO
+This implements a basic version of the game Hangman. It uses Rust and Yew to compile to Web Assembly.
 
-## 🚴 Usage
+## Usage
 
-### 🛠️ Build
+### Build
 
 When building for the first time, ensure to install dependencies first.
 
@@ -16,10 +16,17 @@ yarn install
 yarn run build
 ```
 
-### 🔬 Serve locally
+### Serve locally
 
 ```
 yarn run dev
+```
+
+### Run tests
+
+```
+cargo test
+yarn test
 ```
 
 
