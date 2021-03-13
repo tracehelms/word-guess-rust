@@ -1,5 +1,5 @@
 name: Cargo Check
-on: [pull_request]
+on: push
 jobs:
   check:
     runs-on: ubuntu-latest

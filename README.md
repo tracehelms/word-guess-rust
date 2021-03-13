@@ -1,6 +1,6 @@
-## About
+# Hangman with Rust and Yew
 
-This template shows how to create a web app using Yew and wasm-pack. 
+TODO
 
 ## 🚴 Usage
 
