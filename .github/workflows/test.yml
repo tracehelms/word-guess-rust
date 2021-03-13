@@ -1,0 +1,28 @@
+name: Run Tests
+on: pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Run Cargo Tests
+        run: cargo test
+      - name: Run Cargo fmt
+        run: cargo fmt -- --check
+      - name: Run Clippy
+        run: cargo clippy -- --deny=warnings
+      - name: Run Cargo Check
+        run: cargo check
+      - name: Install Yarn Deps
+        run: yarn install
+      - name: Run Yarn Tests
+        run: yarn test

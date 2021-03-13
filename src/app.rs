@@ -1,5 +1,5 @@
-use yew::prelude::*;
 use crate::game::Game;
+use yew::prelude::*;
 
 pub struct App {
     link: ComponentLink<Self>,
@@ -19,7 +19,7 @@ impl Component for App {
     fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
         App {
             link,
-            state: Game::new()
+            state: Game::new(),
         }
     }
 
@@ -43,15 +43,15 @@ impl Component for App {
         };
 
         let maybe_show_guessing_form = move || -> Html {
-            if let Some(_) = self.state.game_result {
+            if self.state.game_result.is_some() {
                 html! {}
             } else {
                 html! {
                     <>
                         <div>
                             <label for="guess">{"Guess a letter:"}</label>
-                            <input 
-                                name="guess" 
+                            <input
+                                name="guess"
                                 value=value
                                 oninput=self.link.callback(|e: InputData| Msg::SetGuess(e.value))
                                 onkeypress=self.link.callback(|e: KeyboardEvent| {
