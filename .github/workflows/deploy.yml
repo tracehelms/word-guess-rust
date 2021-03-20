@@ -1,4 +1,4 @@
-name: Run Tests
+name: Deploy To GitHub Pages
 on:
   push:
     branches:
