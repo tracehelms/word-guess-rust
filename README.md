@@ -39,6 +39,7 @@ yarn test
 
 
 ## TODO
-- Optimize for mobile
 - Add Cypress end-to-end tests
+- Break `src/app.rs` into smaller components
+- Optimize for mobile
 - Add animation instead of "guesses left"

@@ -1,3 +1,4 @@
+use crate::components::github_banner::GitHubBanner;
 use crate::game::Game;
 use yew::prelude::*;
 
@@ -68,27 +69,30 @@ impl Component for App {
         };
 
         html! {
-            <div class="container">
-                <div class="word-area">
-                    <h1>{"Guess the word!"}</h1>
-                    <h2>
-                        {"Your word: "}
-                        <span class="the-word">{self.state.word_with_guesses()}</span>
-                    </h2>
-                </div>
+            <>
+                <div class="container">
+                    <div class="word-area">
+                        <h1>{"Guess the word!"}</h1>
+                        <h2>
+                            {"Your word: "}
+                            <span class="the-word">{self.state.word_with_guesses()}</span>
+                        </h2>
+                    </div>
 
-                <div class="guesses-area">
-                    <p>{"You already guessed: "}{&self.state.already_guessed()}</p>
-                    <p>{"Guesses left: "}{&self.state.guesses_left}</p>
-                </div>
+                    <div class="guesses-area">
+                        <p>{"You already guessed: "}{&self.state.already_guessed()}</p>
+                        <p>{"Guesses left: "}{&self.state.guesses_left}</p>
+                    </div>
 
-                <div class="guess-area">
-                    <p>{&self.state.error_message}</p>
-                    {maybe_show_guessing_form()}
-                </div>
+                    <div class="guess-area">
+                        <p>{&self.state.error_message}</p>
+                        {maybe_show_guessing_form()}
+                    </div>
 
-                <h2>{self.state.game_over_message()}</h2>
-            </div>
+                    <h2>{self.state.game_over_message()}</h2>
+                </div>
+                <GitHubBanner />
+            </>
         }
     }
 }
