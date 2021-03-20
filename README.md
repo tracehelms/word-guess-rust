@@ -1,6 +1,6 @@
-# Hangman with Rust and Yew
+# Word Guessing Game with Rust and Yew
 
-This implements a basic version of the game Hangman. It uses Rust and Yew to compile to Web Assembly.
+This implements a basic version of a word guessing game. It uses Rust and Yew which compiles to Web Assembly.
 
 ## Usage
 
@@ -36,3 +36,9 @@ yarn test
   between WebAssembly and JavaScript.
 * [`wee_alloc`](https://github.com/rustwasm/wee_alloc), an allocator optimized
   for small code size.
+
+
+## TODO
+- Optimize for mobile
+- Add Cypress end-to-end tests
+- Add animation instead of "guesses left"

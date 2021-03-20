@@ -70,7 +70,7 @@ impl Component for App {
         html! {
             <div class="container">
                 <div class="word-area">
-                    <h1>{"Hangman"}</h1>
+                    <h1>{"Guess the word!"}</h1>
                     <h2>
                         {"Your word: "}
                         <span class="the-word">{self.state.word_with_guesses()}</span>

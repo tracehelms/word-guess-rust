@@ -1,6 +1,6 @@
 use crate::dictionary::get_random_word;
 
-const NUM_GUESSES: u32 = 13;
+const NUM_GUESSES: u32 = 10;
 
 pub struct Game {
     pub error_message: String,
